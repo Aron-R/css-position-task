@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CSS Position</title>
+
+
+<style> 
+body {
+ font-family:verdana;
+ font-size:14px;
+}
+.default {
+ width:100%;
+ max-width:974px;
+ background-color:#f1f1f1;
+    box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin:auto;
+}
+
+.results {
+  float:left;
+    width:50%;
+    
+}
+.position {
+    background-color:#ffffff;
+    padding:15px;
+    margin:15px;
+    margin-top:0;
+    font-size:16px;
+}
+
+    div#myDIV {
+  position:static;
+  width:100px;
+  height:100px;
+  background:red;
+  left:10px;
+  top:100px;
+} 
+#cssCode {
+ font-size:14px;
+ margin-left:10px;
+ margin-right:15px;
+ background-color:#ffffff;
+ padding:10px;
+ color:#222222;
+ text-align:left;
+ }
+ 
+ </style>
+</head>
+
+
+<body>
+  <br>
+  <br>
+ <div class="default">
+  <div style="width:50%;float:left;">
+    <h2> CSS Property: </h2>
+    <form class="position">
+        position:<br><br>
+    
+        <input type="radio" name="positions" onclick="change(this)" id="static" value="static"> static<br>
+    
+        <input  type="radio" name="positions" onclick="change(this)" id="absolute" value="absolute"> absolute <br>
+    
+        <input  type="radio" name="positions" onclick="change(this)" id="fixed" value="fixed"> fixed <br>
+    
+        <input  type="radio" name="positions" onclick="change(this)" id="relative" value="relative"> relative <br>
+    
+        <input  type="radio" name="positions" onclick="change(this)" id="initial" value="initial"> initial
+       
+    </form>
+  </div>
+  <div class="results">
+   <h2>Result: </h2>
+    <div style="margin-left:10px;margin-top:3px;margin-right:15px;background-color:#ffffff;border:1px solid #c3c3c3;height:280px;"><div>
+	
+		<div id="myDIV">myDIV</div>
+	
+</div>
+   </div>
+   <br>
+   <h2>CSS Code:</h2>
+   <div id="cssCode">
+div#myDIV {<br>  position:<span id='enlargecssprop'>static</span>;<br>  width:100px;<br>  height:100px;<br>  background:red;<br>  left:10px;<br>  top:100px;<br>}<br></div>
+  </div>
+  <br>
+  <div style="clear:both;"></div>
+  <br>
+ </div>
+ </body>
+
+
+ <script>
+ 
+  function change(option)
+  {
+  document.getElementById("myDIV").style.position=option.value;
+   document.getElementById("cssCode").innerHTML="div#myDIV {<br>  " + "position:<span>" + option.value + ";</span>" + "<br>  width:100px;<br>  height:100px;<br>  background:red;<br>  left:10px;<br>  top:100px;<br>}<br>";;
+  }
+ 
+ </script>
+
+
+
+
+</html>
